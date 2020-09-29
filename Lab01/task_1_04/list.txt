@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+system.out.println("Ввод");
+Scanner inScan = new Scanner(Syatem.in);
+int a = inScan.nexInt();
+int x = 0;
+int y = 0;
+int z = 0;
+for (int i=1; 1< a; i++)
+{
+ z = x+y;
+ x= y;
+ y = z;
+}
+
+Syatem.out.println(a +"вывод чисел" +z);
+}
+}
+
+
+
+
+int a,b;
+boolean ttt;
+
+for(a=2 a<100; a++){
+for (b=2;b<(a/b) b++){
+if(a%b) == 0 ttt = false;
+break;
+}
+if (ttt) {
+Syatem.out.println(a+ "простые");
+}
+
+}
+
+
+
+
+int a;
+int b;
+boolean x;
+
+for (a=2; a<100 ; a++){
+x = false;
+for (b=2; b<(a/b); b++ {
+if (a%b) == 0 ) x= false;
+break;
+}
+if(x) {
+System.out.println( a+ x);
+}
+)
+
+}
