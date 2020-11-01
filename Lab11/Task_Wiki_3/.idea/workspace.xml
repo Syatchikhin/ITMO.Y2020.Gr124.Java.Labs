@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe392e19-0697-470b-a189-ddf7d3cfc560" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1jenUR3yGYn6MOVtMFJxHbs2Bij" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Test_assignment" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\max\Programming\09_Java_Romanova\ITMO.Y2020.Gr124.Java.Labs\Lab11\Task_Wiki_3\src\com\company\libs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="Task_Wiki_3" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe392e19-0697-470b-a189-ddf7d3cfc560" name="Default Changelist" comment="" />
+      <created>1604173441320</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604173441320</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="666" y="261" key="FileChooserDialogImpl" timestamp="1604235162323">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604235162323" />
+    <state width="1877" height="108" key="GridCell.Tab.0.bottom" timestamp="1604236496368">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="108" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604236496368" />
+    <state width="1877" height="108" key="GridCell.Tab.0.center" timestamp="1604236496367">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="108" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604236496367" />
+    <state width="1877" height="108" key="GridCell.Tab.0.left" timestamp="1604236496367">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="108" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604236496367" />
+    <state width="1877" height="108" key="GridCell.Tab.0.right" timestamp="1604236496367">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="108" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604236496367" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1604231656054">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604231656054" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1604231656053">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604231656053" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1604231656053">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604231656053" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1604231656054">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604231656054" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1604231448631">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604231448631" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1604174300932">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604174300932" />
+    <state x="342" y="140" key="new project wizard" timestamp="1604181412583">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/0.0.1920.1040/1920.0.1024.728@0.0.1920.1040" timestamp="1604181412583" />
+  </component>
+</project>

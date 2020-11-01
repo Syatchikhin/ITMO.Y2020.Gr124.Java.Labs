@@ -1,0 +1,50 @@
+package com.company;
+
+public class Wiki<JSON> {
+
+    private String query;
+
+    public String getQuery() {
+        return query;
+    }
+    private int pageid;
+
+    public int getPageId(){
+        return pageid;
+    }
+
+    private String search;
+
+    public String getSearch(){
+        return search;
+    }
+
+    private int number;
+
+    public int getNumber(){
+        return number;
+    }
+
+    private String snippet;
+
+    public String getSnippet() {
+        return snippet;
+    }
+
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    private int size;
+    public int getSize(){
+        return size;
+    }
+
+    private int wordcount;
+    public int getWordcount(){
+        return wordcount;
+    }
+
+}
