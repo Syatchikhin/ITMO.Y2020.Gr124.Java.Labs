@@ -1,0 +1,23 @@
+ //5.1) vector's sub
+//    Vector vSub = Vector.Sub(mynewvector, mynewvector2);
+//        System.out.println("vectorSub= "+ vSub);
+
+
+
+//    static  Vector Sub (Vector First, Vector Second){
+//        final Vector Sub;
+//        Sub = new Vector (First.x - Second.x, First.y-Second.y, First.z-Second.z);
+//        return Sub;
+//    }
+
+//public class Vector {
+//
+//    double x;
+//    double y;
+//    double z;
+//
+//    Vector(double x, double y, double z) {
+//        this.x = x;
+//        this.y = y;
+//        this.z = z;
+//    }  }
