@@ -1,0 +1,92 @@
+package com.company;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.function.Function;
+
+public class SuperFunction implements Function {
+
+        @Override
+        public ArrayList<String> apply(Enumerable.SearchType type, String path, String name){
+            ArrayList<String> content = null;
+            String Path = path;
+            String Name = name;
+            
+            if(type.equals("fileName"))
+            {
+               //Искать  в имени файла
+                return content;
+            }
+            else
+            {
+                //Искать в тексте файла
+                return content;
+            }
+
+
+        }
+
+}
+
+//**
+
+FunClass func = new FunClass();
+int len = func.apply(fl);
+System.out.println("cxcv");
+//***********************************************
+import java.util.ArrayList;
+import java.util.function.Function;
+
+//public class SuperFunction implements Function {
+
+//        @Override
+//        public ArrayList<String> apply(Enumerable.SearchType type, String path, String name){
+//            ArrayList<String> content = null;
+//            String Path = path;
+//            String Name = name;
+//
+//            if(type.equals("fileName"))
+//            {
+//               //Искать  в имени файла
+//                return content;
+//            }
+//            else
+//            {
+//                //Искать в тексте файла
+//                return content;
+//            }
+//
+//
+//        }
+
+//    @Override
+//    public Object apply(Object o) {
+//        return null;
+//    }
+//        @Override
+//        public Object apply(Object o,String p,String n) {
+//            Enumerable.SearchType type;
+//            String Path = p;
+//            String Name = n;
+//
+//
+//            return null;
+//        }
+//
+//}
+//**************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

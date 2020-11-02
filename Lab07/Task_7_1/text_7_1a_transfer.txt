@@ -1,0 +1,142 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        //  7.1 Заменить класс Shape на интерфейс Shape
+        Cylinder cylinder = new Cylinder( 4, 5);
+        System.out.println("Cylinder");
+        System.out.println("It's volume is: " + cylinder.getVolume());
+
+        Ball ball = new Ball( 3);
+        System.out.println("Ball");
+        System.out.println("It's volume is: " + ball.getVolume());
+
+        Pyramid pyramid = new Pyramid( 9.0,15);
+        System.out.println("Pyramid");
+        System.out.println("It's volume is: " + pyramid.getVolume());
+
+        Box box = new Box(400);
+        System.out.println("Box's size is: " + box.getVolume());
+
+        System.out.println(box.add(ball));         //vol 113
+        System.out.println(box.add(cylinder));     //vol 251
+        System.out.println(box.add(pyramid));      //vol 45
+
+//    // Sorting:
+        //   ArrayList<Shape> shapes = box.getShapes();
+        //  Collections.sort(shapes); // sorted by Volume!
+    }
+}
+
+//***********************************************************************
+package com.company;
+
+public interface Shape {
+
+    double getVolume();
+}
+//************************************************************************
+package com.company;
+
+abstract class SolidOfRevolution implements Shape {
+    protected double radius;
+    protected double volume;
+
+    public SolidOfRevolution (double rad){
+        this.radius = rad;
+        this.volume = volume;
+    }
+
+    //@Override
+//public  double getRedius(){
+//
+//        this.radius = radius;
+//        return radius;
+//   }
+
+}
+//******************************************************************************
+package com.company;
+
+public class Ball extends SolidOfRevolution{
+    Ball(int rad) {
+        super(rad);
+    }
+    //this.radius = rad;
+
+    @Override
+    public double getVolume(){
+        return  (4 * 3.14 * Math.pow(radius,3))/3;
+    }
+}
+//*****************************************************************************
+package com.company;
+
+public class Pyramid implements Shape {
+
+    double area;
+    int height;
+
+    Pyramid(double s, int h){
+        this.area = s;
+        this.height = h;
+    }
+
+    @Override
+    public double getVolume(){
+        return (area * height ) /3;
+    }
+
+}
+//*******************************************************************************
+package com.company;
+
+public class Cylinder extends SolidOfRevolution{
+    double height;
+
+    Cylinder(int rad , int h ) {
+        super(rad);
+        this.height = h;
+        this.volume = 3.14 * Math.pow(radius,2) * height;
+    }
+
+    @Override
+    public double getVolume(){
+        return 3.14 * Math.pow(radius,2) * height;
+    }
+
+
+}
+//******************************************************************************
+package com.company;
+
+public class Box extends SolidOfRevolution {
+
+    public double available;
+
+    Box(double vol) {
+        super(vol);
+        this.available = vol;
+        this.volume = vol;
+    }
+
+    public boolean add(Shape shape) {
+        if (available >= shape.getVolume()) {
+
+            available -= shape.getVolume();
+            System.out.println("volume is: " + available);
+            return true;
+
+        } else {
+            System.out.println("volume is: " + available);
+            return false;
+        }
+    }
+
+    @Override
+    public double getVolume() {
+        return volume;
+    }
+
+}

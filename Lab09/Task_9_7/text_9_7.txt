@@ -1,0 +1,132 @@
+package com.company;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.function.Function;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // 9.7  Написать метод, который в каталоге ищет файлы удовлетворяющие любому
+        //критерию, который задается с помощью java.util.function.Function.
+
+        String filePath = "E:\\max\\Programming\\09_Java_Romanova\\ITMO.Y2020.Gr124.Java.Labs\\Lab09\\Task_9_7\\src\\com\\company\\";
+        //String fileSourceName = "text1.txt";
+        //String fileResultName = "text2.txt";
+
+
+        //Function<Integer, String> convert = x-> String.valueOf(x) + " долларов";
+       // System.out.println(convert.apply(5)); // 5 долларов
+
+        Function<String, String> f = Function.identity();
+        System.out.println(f.apply("Some Value"));
+
+        Enumerable.SearchType type = Filename;
+        String content = "Вечор";
+
+        Function< String, String> ComplexSearch  = Function.apply( type, content);
+
+        File direct = new File (filePath);
+        ArrayList<String> content = new ArrayList<String>();
+
+        String searchRow = "Татьяна";
+        //String searchRow = "Вечор";
+        //String searchRow = "Выпьем с горя; где же кружка?";
+        String fileNamePiece;
+
+        for(File myFile: direct.listFiles()){
+            String myFileName = myFile.getName();
+
+            //check system directory //**
+            if (!myFileName.equals("Main.java")){  //**
+                //Read file
+                ArrayList<String> st1 = Read_0(filePath, myFileName);
+
+                //Search
+                for (String row : st1) {
+
+                    for (int i = 0; i <= row.length() - searchRow.length(); i++) {
+                        fileNamePiece = row.substring(i, i + searchRow.length());
+                        if (fileNamePiece.equals(searchRow)) {
+                            content.add(myFile.getName());
+                        }
+                    }
+
+                }
+
+            } //**
+        }
+        for (String s: content){
+            System.out.println(s);
+        }
+    }
+    //Methods
+    //Read
+    public static ArrayList<String> Read_0 (String p, String n){
+        String filePath = p;
+        String fileName = n;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + fileName))) {
+            String line;
+            ArrayList<String> content = new ArrayList<String>();
+            while ((line = br.readLine()) != null) {
+                content.add(line);
+            }
+            return content;
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+}
+//*****************************
+
+public class FunctionClass implements Function{
+@Override
+public Integer apply(Object o){
+	byte[] bytes = new byte[1];
+	try{
+		FileInputStream input = new FileInputStream(o.toString());
+		bytes = new byte[input.available()];
+		input.read(bytes);
+	 }
+	 catch (Exception e){}
+	 return bytes.length;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

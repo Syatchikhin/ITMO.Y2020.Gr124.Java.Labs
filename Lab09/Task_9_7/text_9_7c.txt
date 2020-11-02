@@ -1,0 +1,146 @@
+package com.company;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.function.Function;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // 9.7  Написать метод, который в каталоге ищет файлы удовлетворяющие любому
+        //критерию, который задается с помощью java.util.function.Function.
+
+                String filePath = "E:\\max\\Programming\\09_Java_Romanova\\ITMO.Y2020.Gr124.Java.Labs\\Lab09\\Task_9_6\\src\\com\\company\\";
+                //String fileSourceName = "text1.txt";
+                //String fileResultName = "text2.txt";
+                
+                
+                File direct = new File (filePath);
+                ArrayList<String> content = new ArrayList<String>();
+                ArrayList<Integer> sizeOfFoundFile = new ArrayList<Integer>();
+
+                String searchRow = "Татьяна";
+                //String searchRow = "Вечор";
+                //String searchRow = "Выпьем с горя; где же кружка?";
+                //String fileContentPiece;
+
+        //Function<Integer, String> convert = x-> String.valueOf(x) + " долларов";
+         //System.out.println(convert.apply(5)); // 5 долларов
+
+                for(File myFile: direct.listFiles()){
+                    String myFileName = myFile.getName();
+
+                    //check system directory //**
+                    if (!myFileName.equals("Main.java")){  //**
+                        //Read file
+                        ArrayList<String> st1 = Methods.Read_0(filePath, myFileName);
+
+                        //Search
+                        for (String row : st1) {
+
+                            if (row.contains(searchRow)) {
+                                content.add(myFile.getName());
+                                //
+                                //System.out.println("Длина имени файла" + fileSize.apply(fileName));
+                                sizeOfFoundFile.add(Methods.result1));
+                            }
+
+                        }
+
+                    } //**
+                }
+                if (content.size()!=0){
+                    System.out.println("Искомый текст содержится в файле/файлах:");
+                    for (String s: content) {
+                        System.out.println(s);
+
+                    }
+                }else{
+                    System.out.println("Искомый текст не найден");
+                }
+
+            }
+
+        }
+//**********************************************************************
+package com.company;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
+public class Methods {
+    //Methods
+    //Read
+    public static ArrayList<String> Read_0 (String p, String n){
+        String filePath = p;
+        String fileName = n;
+        Integer result1;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + fileName))) {
+            String line;
+            ArrayList<String> content = new ArrayList<String>();
+            while ((line = br.readLine()) != null) {
+                content.add(line);
+            }
+
+            //Size
+//            Function <String, Integer> fileSize = (fs) -> {
+//                Integer result ;
+//                result = fs.length();
+//               return result;
+//            };
+//               System.out.println("Длина имени файла" + fileSize.apply(fileName));
+            Function <String, Integer> fileSize = (fs) -> {
+                Integer result ;
+                result = fs.length();
+                return result;
+            };
+            //System.out.println("Длина имени файла" + fileSize.apply(fileName));
+             result1 = fileSize.apply(fileName);
+
+            return content;
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //write
+    public static void  MyFileWriter_0( String p, String n, List<String> c){
+        String filePath = p;
+        String fileName = n;
+        List<String> content = c;
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter( filePath+fileName))){
+
+            for (String element : content) {
+                bw.write(element);
+                bw.write("\n");
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        System.out.println("Written");
+    }
+
+
+//    Integer Function <String >  getFileSizeBytes (File fileName);
+//            return fileName.length() + " bytes";
+//            content.size();
+
+//    static Object reduce(List list, Function f, Object initVal) {
+//        synchronized (list) {
+//            Object result = initVal;
+//            for (Object о : list)
+//                result = f.apply(result, o);
+//            return result;
+//        }
+    }
+
+//}

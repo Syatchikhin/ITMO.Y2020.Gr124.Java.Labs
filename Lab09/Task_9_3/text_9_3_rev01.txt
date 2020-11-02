@@ -1,0 +1,58 @@
+package com.company;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Main {
+
+    public static ArrayList<String> main(String[] args) {
+        //9.3. Используя решение 1 и 2, напишите метод, который склеивает два текстовый файла один
+        String filePath = "E:\\max\\Programming\\09_Java_Romanova\\ITMO.Y2020.Gr124.Java.Labs\\Lab09\\Task_9_3\\src\\com\\company\\";
+        String fileSource1Name = "text1.txt";
+        String fileSource2Name = "text2.txt";
+        String fileResultName = "text3.txt";
+
+        //Read 1st file
+        ArrayList<String> st1 = Read_0(filePath, fileSource1Name);
+        for (String s : st1) {
+            System.out.println(s);}
+            //Read 2nd file
+            //ArrayList<String> st2 = Read_0(filePath, fileSource2Name);
+            //Clue both
+            //ArrayList<String> st3 = st1.add(st2);
+
+            //Write result into a file
+
+    }
+
+        //Methods
+        public static ArrayList<String> Read_0 (String p, String n){
+            String filePath = p;
+            String fileName = n;
+
+            try (BufferedReader br = new BufferedReader(new FileReader(filePath + fileName))) {
+                String line;
+                ArrayList<String> content = new ArrayList<String>();
+                while ((line = br.readLine()) != null) {
+                    content.add(line);
+                }
+
+                //for (String s : content) {
+                //    System.out.println(s);
+                //}
+                return content;
+
+            } catch (FileNotFoundException e) {
+                System.out.println("File not found");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+
+}

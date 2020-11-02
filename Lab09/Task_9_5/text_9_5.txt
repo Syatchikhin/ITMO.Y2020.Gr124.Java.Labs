@@ -1,0 +1,25 @@
+
+import java.io.File;
+import java.util.ArrayList;
+
+
+
+File dir = new File (FilePath);
+ArrayList<String> content = new ArrayList<String>();
+
+String searchLine = "тра-та та";
+String interLine;
+
+for(File item: dir.listFiles(){
+	String itemName = item.get.Name().concat(" ");
+	for(int i = 0; i < itemName.length()-searchLine.length());
+	if (interLine.equals(seachLine)){
+		listName.add(item.getName());
+	}
+   }
+  }
+  for (String s: listName){
+	System.out.println(s);
+  }
+
+}

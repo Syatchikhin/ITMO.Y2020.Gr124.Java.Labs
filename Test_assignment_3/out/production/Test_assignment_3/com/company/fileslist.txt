@@ -1,0 +1,6 @@
+https://en.ds-servers.com/goldsrc-res/r97631/weapon_awp.txt weapon.txt
+https://en.ds-servers.com/goldsrc-res/r97631/weapon_awp.txt weapon.txt
+http://old.kpfu.ru/cit/primer_tz.doc primer_tz.doc
+https://kompas.ru/source/info_materials/2018/Oborudovanie-Truboprovody-rukovodstvo.pdf Oborudovanie-Truboprovody-rukovodstvo.pdf
+https://kompas.ru/s/w645/source/images/thumbnails/2018-04-komplekt-kompas-3d-oborudovanie-proektirovanie-truboprovoda.jpg Tube.jpg
+https://kompas.ru/.storage/!tmp-m-w-o/komplekt-kompas-3d-oborudovanie-proektirovanie-truboprovoda.webm Piping_creation_video.webm

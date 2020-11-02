@@ -1,0 +1,60 @@
+package com.company;
+
+    public interface Shape {
+        
+            double getVolume();
+    }
+
+//****************************************
+package com.company;
+
+abstract class SolidOfRevolution implements Shape {
+    protected double radius;
+    protected double volume;
+
+public SolidOfRevolution (double rad){
+        this.radius = rad;
+        this.volume = volume;
+   }
+ }  
+//*******************************************************
+   package com.company;
+
+public class Ball extends SolidOfRevolution{
+    Ball(int rad) {
+        super(rad);
+
+
+    }
+    //this.radius = rad;
+
+    @Override
+ public double getVolume(){
+        return  (4 * 3.14 * Math.pow(radius,3))/3;
+    }
+
+
+}
+//*************************************************************
+package com.company;
+
+public class Pyramid implements Shape {
+
+    double area;
+    int height;
+
+    Pyramid(double s, int h){
+        this.area = s;
+        this.height = h;
+    }
+
+    @Override
+public double getVolume(){
+        return (area * height ) /3;
+    }
+
+}
+//************************************************************
+
+
+

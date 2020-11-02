@@ -1,0 +1,156 @@
+package com.company;
+
+abstract class Shape {
+    double width;
+    double height;
+    double volume;
+
+    Shape (double vol ){
+        volume = vol;
+        System.out.println("This is");
+    }
+
+    Shape(int a, int b){
+        this.width = a;
+        this.height = b;
+        System.out.println("This is");
+
+    }
+
+    double getVolume(){
+        return volume;
+
+    }
+}
+//********************************************
+package com.company;
+
+abstract class SolidOfRevolution extends Shape {
+    double radius;
+
+    SolidOfRevolution(int rad) {
+        super(rad);
+
+        this.radius = rad;
+    }
+
+    double getRadius(){
+        return radius;
+    }
+
+
+}
+//***************************************************
+package com.company;
+
+public class Cylinder extends SolidOfRevolution{
+    double height;
+
+    Cylinder(int rad , int h ) {
+        super(rad);
+        this.height = h;
+    }
+
+   // @Override
+    double getVolume(){
+        return 3.14 * Math.pow(radius,2) * height;
+    }
+
+
+}
+//**************************************************
+package com.company;
+
+public class Ball extends SolidOfRevolution{
+    Ball(int rad) {
+        super(rad);
+    }
+    //this.radius = rad;
+
+    //@Override
+    double getVolume(){
+        return  (4 * 3.14 * Math.pow(radius,3))/3;
+    }
+
+
+}
+//************************************************
+package com.company;
+
+public class Pyramid extends Shape {
+
+    double area;
+    int height;
+
+    Pyramid(double s, int h){
+        super (h);
+        this.area = s;
+        this.height = h;
+    }
+
+    //@Override
+    double getVolume(){
+        return (area * height ) /3;
+    }
+
+    double getArea(){
+        return area;
+    }
+}
+//************************************************
+package com.company;
+
+public class Box extends Shape {
+
+    public double available;
+
+    Box(double vol) {
+        super(vol);
+        this.available = vol;
+    }
+
+    public boolean add(Shape shape) {
+        if (available >= shape.getVolume()) {
+
+            available -= shape.getVolume();
+            System.out.println("volume is: " + available);
+            return true;
+
+        } else {
+            System.out.println("volume is: " + available);
+            return false;
+        }
+    }
+}
+//********************************************************
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // Задание 6.1 Реализовать иерархию классов Abstract
+
+        Cylinder cylinder = new Cylinder( 4, 5);
+        System.out.println("Cylinder");
+        System.out.println("It's volume is: " + cylinder.getVolume());
+        System.out.println("It's radius is: " + cylinder.getRadius());
+
+        Ball ball = new Ball( 3);
+        System.out.println("Ball");
+        System.out.println("It's volume is: " + ball.getVolume());
+        System.out.println("It's radius is: " + ball.getRadius());
+
+        Pyramid pyramid = new Pyramid( 9.0,15);
+        System.out.println("Pyramid");
+        System.out.println("It's volume is: " + pyramid.getVolume());
+        System.out.println("It's foundation area is: " + pyramid.getArea());
+
+        Box box = new Box(400);
+        System.out.println("Box's size is: " + box.getVolume());
+
+        System.out.println(box.add(ball));         //vol 113
+        System.out.println(box.add(cylinder));     //vol 251
+        System.out.println(box.add(pyramid));      //vol 45
+    }
+}

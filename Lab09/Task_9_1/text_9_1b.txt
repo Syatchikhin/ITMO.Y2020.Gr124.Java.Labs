@@ -1,0 +1,68 @@
+package com.company;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.stream.Stream;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// 9.1 Написать метод, который читает текстовый файл и возвращает его в виде списка строк.
+
+        String filePath = "E:\\max\\Programming\\09_Java_Romanova\\ITMO.Y2020.Gr124.Java.Labs\\Lab09\\Task_9_1\\src\\com\\company\\";
+        String fileName = "text.txt";
+
+        Read_1( filePath, fileName);
+        //Read_2( filePath, fileName);
+    }
+
+    public static void Read_1(String p, String n)
+    {
+        String filePath = p;
+        String fileName = n;
+
+        StringBuilder contentBuilder = new StringBuilder();
+
+        try
+        {
+            Stream<String> stream = Files.lines( Paths.get(filePath+fileName), StandardCharsets.UTF_8);
+            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+            if (contentBuilder.length() == 0){throw new Exception("No data"); }
+        }
+
+        catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        System.out.print(contentBuilder);
+
+    }
+
+    public static void Read_2(String p, String n)
+    {
+        String filePath = p;
+        String fileName = n;
+        //Read 2
+        try {
+            InputStream inputStream = new FileInputStream(filePath + fileName);
+
+            int nRead;
+            byte[] data = new byte[128];  // Буфер для чтения
+
+            // nRead - количество прочитанного
+            while ((nRead = inputStream.read(data, 0, data.length)) != -1) {
+                System.out.println(Arrays.toString(data));
+                // System.out.println(Arrays.toChar(data));
+            }
+        }
+        catch (IOException ex) {
+            //catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+}

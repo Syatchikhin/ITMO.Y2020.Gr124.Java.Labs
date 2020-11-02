@@ -1,0 +1,56 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// 10.1-2 Напишите программу, в которой запускается 10 потоков и каждый из них выводит
+        //числа от 0 до 100.
+        //public int count = 0;
+        //Выведете состояние потока перед его запуском, после запуска и во время выполнения
+        for (int i = 1; i <= 10; i++) {
+           String ThreadName = "№" + i;
+            new MyThread(ThreadName).start();
+        }
+    }
+}
+//***********************************************************************************************
+package com.company;
+
+import static java.lang.Thread.*;
+
+class MyThread extends Thread{
+    public MyThread(String threadName) {
+    }
+
+    @Override
+    public void run() {
+         String threadName = currentThread().getName();
+        Boolean on = currentThread().isAlive();
+        System.out.println("Before starting: Thread №:" +threadName + " status is: " + on.toString());
+
+        for (int j = 0; j <= 100; j++) {
+            int threadNumber = activeCount();
+            on = currentThread().isAlive();
+            threadName = currentThread().getName();
+            System.out.println("Active count: " + threadNumber + "  calculates: " + j + " from 100 Thread №: " +threadName + " status is: " + on.toString());
+        }
+
+        on = currentThread().isAlive();
+        threadName = currentThread().getName();
+        System.out.println("Finish: Thread №:" +threadName + " status is: " + on.toString());
+    }
+//@Override
+//    public void run() {
+//
+//        for (int i = 0; i <= 100; i++) {
+//            int threadNumber = Thread.activeCount();
+//            //Boolean on = Thread.isAlive;
+//            System.out.println("Thread: " + threadNumber + " calculates: " + i + " from 100");
+//            //count ++;
+//            //return count;
+//        }
+//    }
+
+
+}
+

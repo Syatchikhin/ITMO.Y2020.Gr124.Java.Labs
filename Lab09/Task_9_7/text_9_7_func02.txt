@@ -1,0 +1,73 @@
+package com.company;
+
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.function.Function;
+
+public class SuperFunction implements Function {
+
+        @Override
+        public ArrayList<String> apply(Enumerable.SearchType type, String path, String name){
+            ArrayList<String> content = null;
+            String Path = path;
+            String Name = name;
+            
+            if(type.equals("fileName"))
+            {
+               //Искать  в имени файла
+                return content;
+            }
+            else
+            {
+                //Искать в тексте файла
+                return content;
+            }
+
+
+        }
+
+}
+
+//**
+
+FunClass func = new FunClass();
+int len = func.apply(fl);
+System.out.println("cxcv");
+//****
+
+package com.company;
+
+import java.util.function.Function;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        //Function<Integer, String> convert = x-> String.valueOf(x) + " долларов";
+        //System.out.println(convert.apply(5)); // 5 долларов
+
+
+       // Function<Integer, String> convert = x-> String.valueOf(x) + " долларов";
+        //String res = convert.apply(5);
+       // System.out.println(res); // 5 долларов
+
+        // Function which takes in a number and
+        // returns half of it
+        //Function<Integer, Double> half = a -> a / 2.0;
+        // Now treble the output of half function
+        //half = half.andThen(a -> 3 * a);
+        // apply the function to get the result
+        //System.out.println(half.apply(10));
+        String a = "1234";
+        String b = "5678";
+        String c;
+        Function<String, String> Fullpath  = c -> a + b ;
+        // Now treble the output of half function
+        //Fullpath = Fullpath.andThen(b-> 3 * a);
+        // apply the function to get the result
+        System.out.println(Fullpath.apply( a, b ));
+
+
+
+    }
+}

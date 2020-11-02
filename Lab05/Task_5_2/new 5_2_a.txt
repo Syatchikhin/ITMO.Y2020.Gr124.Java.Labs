@@ -1,0 +1,56 @@
+package com.company;
+import java.util.TreeSet;
+public class Main {
+
+    public static void main(String[] args) {
+        // 2. Является ли слово полиндромом
+        TreeSet <String> rows = new TreeSet<String>();
+        rows.add("казак");
+        rows.add("шалаш");
+        rows.add("Петя");
+        rows.add("Вася");
+        rows.add("Однаждыуденую");
+        rows.add("Однаждзимнюю");
+        rows.add("Однаждыстуденуюзимнююпору");
+        rows.add("Всубботупятогоапреля");
+        rows.add("ТыпомнишьдядяведьнедаромМоскваспаленнаяпожаром");
+        rows.add("ХорошаядевочкаЛида");
+        
+        int half;
+        Character begin;
+
+        Character end;
+        String origin;
+
+        for (String row : rows ){
+            origin = row;
+            half = Math.abs(row.length()/2);
+            int currentLength = row.length();
+            for (int i =1; i < half; i ++){
+
+                begin = row.charAt(i);
+                end = row.charAt(currentLength);
+                if (begin != end ) {
+                    ;
+                    //неполином
+                    break;
+                }
+                if (currentLength >=3){
+                    row = row.substring(1,currentLength);
+                    currentLength = currentLength - 2;
+                }
+                System.out.print(origin);
+            }
+
+
+        }
+        //System.out.print(longest);
+
+        //Вывод слов - палиндромов
+        for (String row : rows ){
+            System.out.println(row);
+        }
+
+
+    }
+}

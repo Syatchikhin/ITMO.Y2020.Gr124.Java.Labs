@@ -1,0 +1,30 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// 10.1 Напишите программу, в которой запускается 10 потоков и каждый из них выводит
+        //числа от 0 до 100.
+        //public int count = 0;
+
+        for (int i = 0; i < 10; i++) {
+            new MyThread().start();
+        }
+    }
+}
+//*************************************************************************
+
+package com.company;
+
+class MyThread extends Thread{
+    @Override
+    public void run() {
+
+        for (int i = 0; i <= 100; i++) {
+            int threadNumber = Thread.activeCount();
+            System.out.println("Thread: " + threadNumber + " calculates: " + i + " from 100");
+            //count ++;
+            //return count;
+        }
+    }
+}

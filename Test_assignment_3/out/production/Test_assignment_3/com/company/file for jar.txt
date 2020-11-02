@@ -1,0 +1,7 @@
+cd \
+e:
+cd e:\Max\Programming\09_Java_Romanova\ITMO.Y2020.Gr124.Java.Labs\Test_assignment_3\out\artifacts 
+
+java -jar Test_assignment_3.jar  
+
+java -jar Test_assignment_3.jar  E:\Max\Programming\09_Java_Romanova\ITMO.Y2020.Gr124.Java.Labs\Test_assignment_3\out\artifacts

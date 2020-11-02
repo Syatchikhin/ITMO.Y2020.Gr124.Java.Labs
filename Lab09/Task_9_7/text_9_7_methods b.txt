@@ -1,0 +1,83 @@
+package com.company;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
+public class Methods {
+    //Methods
+    //Read
+    public static ArrayList<String> Read_0 (String p, String n){
+        String filePath = p;
+        String fileName = n;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath + fileName))) {
+            String line;
+            ArrayList<String> content = new ArrayList<String>();
+            while ((line = br.readLine()) != null) {
+                content.add(line);
+            }
+
+            //Size
+            //Function<String, String> Fullpath  = a ->  filePath + a ;
+           // String FP = Fullpath.apply( "text.txt" );
+            // просто вызываем метод length() и получаем размер файла в байтах
+            //private static String getFileSizeBytes(File file) {
+           //     return file.length() + " bytes";
+           // }
+            //Integer Function <String >  getFileSizeBytes (File fileName);
+           // return fileName.length() + " bytes";
+            //content.size();
+            Function <String, Integer> fileSize = (n) -> {
+                Integer result ;
+                result = n.length();
+               return result;
+            };
+               System.out.println("res" + fileSize.apply(fileName));
+
+
+            return content;
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //write
+    public static void  MyFileWriter_0( String p, String n, List<String> c){
+        String filePath = p;
+        String fileName = n;
+        List<String> content = c;
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter( filePath+fileName))){
+
+            for (String element : content) {
+                bw.write(element);
+                bw.write("\n");
+            }
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+        System.out.println("Written");
+    }
+
+
+//    Integer Function <String >  getFileSizeBytes (File fileName);
+//            return fileName.length() + " bytes";
+//            content.size();
+
+//    static Object reduce(List list, Function f, Object initVal) {
+//        synchronized (list) {
+//            Object result = initVal;
+//            for (Object о : list)
+//                result = f.apply(result, o);
+//            return result;
+//        }
+    }
+
+//}

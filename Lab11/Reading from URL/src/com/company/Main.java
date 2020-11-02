@@ -1,0 +1,161 @@
+package com.company;
+import java.net.*;
+import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.Scanner;
+//using System.Text.Json.Serialization;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONString;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+//public class Main {
+
+    //public static void main(String[] args) {
+	// write your code here
+        //Scanner in = new Scanner(System.in);
+        //System.out.print("Enter request");
+        //String query = in.nextLine();
+        //in.close();
+        //query = URLEncoder.encode(query, "UTF-8");
+       // String query = "Perm";
+
+        //Сcылка
+       // String targetUrl = "https://en.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=\"" + query + "\"";
+
+
+
+    //}
+//}
+//public class URLConnectionReader {
+public class Main {
+        public static void main(String[] args) throws Exception {
+
+            String query = "Perm";
+
+            //Сcылка
+            String targetUrl = "https://en.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=\"" + query + "\"";
+
+            String line = "";
+            String sumLine = "";
+
+            URL oracle = new URL(targetUrl);
+            URLConnection yc = oracle.openConnection();
+            BufferedReader in = new BufferedReader(new InputStreamReader(
+                    yc.getInputStream()));
+            String inputLine;
+            //while ((inputLine = in.readLine()) != null)
+            //System.out.println("protocol = " + oracle.getProtocol());
+            //System.out.println("protocol = " + oracle.getPort());
+            //inputLine = inputLine.toString();
+
+            // System.out.println(inputLine);
+            // sumLine += inputLine;
+            while ((line = in.readLine()) != null) {
+
+                sumLine += line;
+            }
+
+            in.close();
+
+            //System.out.print(sumLine);
+            //System.out.println(sumLine);
+
+            //JSONObject json = new JSONObject();
+
+//        JSONObject JO = JSONParser.parse(sumLine);
+//
+//        JSONString local = "{\"one\" : 1}";
+//        result = JSONParser.parse(jsonString);
+//        server.log(result.one);
+//
+//        JSONParser parser = new JSONParser();
+//        JSONObject json = (JSONObject) parser.parse(stringToParse);
+//
+//        String output = jsonParse.parse(sumLine);
+
+            try {
+                JSONObject jsonObject = new JSONObject("{\"phonetype\":\"N95\",\"cat\":\"WP\"}");
+            } catch (JSONException err) {
+                System.out.print(err.toString());
+            }
+            //System.out.print(jsonObject.phonetype());
+
+            String responseString = "{'to': 'INR', 'rate': 64.806700000000006, 'from': 'USD'}";
+            JSONObject responseObject = new JSONObject(responseString);
+            //String number1 = responseObject.getString("rate");
+            //String number2 = responseObject.getString("to");
+            String number3 = responseObject.toString(1);
+            String number4 = responseObject.getString("to");
+            //String number5 = jsonObject.getString("cat");
+            //System.out.print("Response" + responseObject.getString("rate")); //64.806700000000006
+            //System.out.print("Response" + responseObject.getString("to"));
+            //System.out.println(json.toString(to));
+            //System.out.println(responseObject.toString(1));
+            //System.out.println("number 1: " + number1);
+            //System.out.println("number 2: " + number2);
+            System.out.println("number 3: " + number3);
+            System.out.println("number 4: " + number4);
+            //System.out.println("number 5: " + number5);
+//        for (Search b : a.getQuery().getSearch()) {
+//            System.out.println("Flow "+ b.getTitle());
+//            System.out.println("Flow "+ b.getPageId());
+//            System.out.println("Flow " +b.getSize());
+//            System.out.println("Flow " + b.getWordcount()+"\n");
+//        }
+            //String result = JsonParse.parse(responseObject);
+
+           // String result = JsonParse.parse(sumLine);
+           // System.out.print("result: "+ result);
+
+           // String result1 = responseObject.get("query").toString();
+           // System.out.print("result1: "+ result1);
+
+           // String result2 = number3;
+           // System.out.print("result2: "+ result2);
+
+
+
+           // ObjectMapper mapper = new ObjectMapper();
+
+
+            //File json = new File("historic.json");
+           // RevcontentReportResponse cricketer = mapper.readValue(json, RevcontentReportResponse.class);
+            //System.out.println("Java object created from JSON String :");
+            //System.out.println(cricketer);
+
+        }
+
+
+
+ public static class JsonParse {
+
+       public static  String parse(String str) throws ParseException {
+                Object ob = new JSONParser().parse(str);
+                org.json.simple.JSONObject jsonObject = (org.json.simple.JSONObject) ob;
+
+                org.json.simple.JSONObject jsonObject1 = (org.json.simple.JSONObject) jsonObject.get("query");
+                org.json.simple.JSONObject jsonObject2 = (org.json.simple.JSONObject) jsonObject.get("pages");
+
+                String rawkey = jsonObject2.toString();
+                int s = rawkey.indexOf(":") - 1;
+                String key = rawkey.substring(2, s);
+
+                org.json.simple.JSONObject jsonObject3 = (org.json.simple.JSONObject) jsonObject2.get(key);
+                //JSONObject jsonobject3 = (JSONObject) jsonObject2.get("11111");
+
+                String out = jsonObject3.get("extract").toString();
+
+                return out;
+
+            }
+
+
+        }
+    }

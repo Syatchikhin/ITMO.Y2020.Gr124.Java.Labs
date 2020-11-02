@@ -1,0 +1,74 @@
+try (BufferedWriter bw = new BufferedWriter(new FileWriter( filePath+fileName))){
+
+	ArrayList<String> text = new ArrayList<String>();
+	
+	
+	
+	
+	for (String s: text){
+		bw:write(s);
+		bw.write("\n");
+	
+	}
+	
+	System.out.println("Done");
+	
+	} catch (Exception e){
+		e.printStackTrace();
+	}
+	
+	
+}
+
+//****************************************************************************
+package com.company;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+	// 9.2 Написать метод, который записывает в файл строку, переданную параметром.
+        String filePath = "E:\\max\\Programming\\09_Java_Romanova\\ITMO.Y2020.Gr124.Java.Labs\\Lab09\\Task_9_2\\src\\com\\company\\";
+        String fileName_0 = "text0.txt";
+        String fileName_1 = "text1.txt";
+        String fileName_2 = "text2.txt";
+        String fileName_3 = "text3.txt";
+        String content = "Однажды в студеную зимнюю пору я из лесу вышел";
+
+                List<String> stringList = new ArrayList<>();
+                    stringList.add("First ");
+                    stringList.add("Second ");
+                    stringList.add("First ");
+                    stringList.add("Second ");
+
+
+        MyFileWriter_0( filePath, fileName_1, stringList);
+         MyFileWriter_1( filePath, fileName_1, content);
+        MyFileWriter_2( filePath, fileName_2, content);
+        //MyFileWriter_3( filePath, fileName_3, content);
+
+    }
+
+    public static void  MyFileWriter_0( String p, String n, List<> c){
+        String filePath = p;
+        String fileName = n;
+        List<String>  content = c;
+
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter( filePath+fileName))){
+        for (List s: content){
+            bw.write(s);
+            bw.write("\n");
+
+        }
+
+        System.out.println("Done");
+
+    } catch (Exception e){
+        e.printStackTrace();
+    }
+
+
+    }

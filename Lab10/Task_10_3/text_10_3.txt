@@ -1,0 +1,91 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// 10.3 Напишите программу, в которой запускается 100 потоков, каждый из которых
+        //вызывает метод increment() 1000 раз.
+        //После того, как потоки завершат работу, проверьте, чему равен count .
+         MyThread tr = null;
+        
+        
+        for (int i = 1; i <= 10; i++) {
+            //String ThreadName = "№" + i;
+            //new MyThread(ThreadName).start();
+            //System.out.println("counter " + Counter.getCount());
+             tr= new MyThread("Myhread ");
+            tr.start();
+            
+        }
+        
+
+        try{
+        tr.join();
+        }
+        catch(InterruptedException e){
+
+        System.out.printf("%s has been interrupted", tr.getName());
+        }
+        System.out.println("Main thread finished...");
+        
+        
+        //Counter.getCount();
+        //currentThread().join();
+        //System.out.println("counter " + Counter.getCount());
+    }
+}
+
+
+//          System.out.println("Main thread started...");
+//        JThread t= new JThread("JThread ");
+//        t.start();
+//        try{
+//        t.join();
+//        }
+//        catch(InterruptedException e){
+//
+//        System.out.printf("%s has been interrupted", t.getName());
+//        }
+//        System.out.println("Main thread finished...");
+//***************************************************************************
+package com.company;
+
+class MyThread extends Thread{
+    public MyThread(String threadName) {
+    }
+
+    @Override
+    public void run() {
+        String threadName = currentThread().getName();
+        Boolean on = currentThread().isAlive();
+        //System.out.println("Before start: Thread №:" +threadName + " status is: " + on.toString());
+
+        for (int j = 0; j <= 10; j++) {
+            Counter.increment();
+            int threadNumber = activeCount();
+            on = currentThread().isAlive();
+            threadName = currentThread().getName();
+            System.out.println("Active count: " + threadNumber + "  calculates: " + j + " from 10 Thread №: " +threadName + " status is: " + on.toString());
+        }
+
+        //on = currentThread().isAlive();
+       // threadName = currentThread().getName();
+        //System.out.println("After finish: Thread №:" +threadName + " status is: " + on.toString());
+    }
+}
+//******************************************************************************
+package com.company;
+
+public  class Counter {
+    static int count = 0;
+    //static int;
+
+    public static void increment() {
+        count = count + 1;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+}
+

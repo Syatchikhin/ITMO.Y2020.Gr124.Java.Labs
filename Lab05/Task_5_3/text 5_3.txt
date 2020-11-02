@@ -1,0 +1,72 @@
+package com.company;
+
+public class Cenzor {
+
+    String word;
+    //private static Boolean status;
+
+    Cenzor ( String w){
+        this.word = w;
+    }
+
+//    public void setStatus(Boolean status) {
+//        this.status = status;
+//    }
+
+//    public static Boolean getStatus(){
+//        return status;
+//    }
+
+    static void checkCenzor( String word) {
+        //-----убрать пробелы---------------------------------------------
+        while(word.contains("бяка")) {
+            word = word.replace("бяка", "[вырезано цензурой]");
+        }
+        System.out.println("введенные слова с правкой цензуры: " + word) ;
+
+        //-----------здесь определяем полиндром или нет -------------------
+//        int half = Math.abs(word.length() / 2);
+//        int currentLength = word.length();
+//        //System.out.print(word + " " + half + " " + currentLength + "\n");
+//
+//        for (int i = 0; i < half ; i++) {
+//            if (word.charAt(i) != word.charAt(currentLength - 1)) {
+//
+//                // не полиндром
+//                Boolean status = false;
+//                System.out.println("полиндром? " + status);
+//                return status;
+//
+//            }
+//            if (currentLength - i >= 3) {
+//                // если более трех букв - отнять 1 букву
+//                currentLength = currentLength - 1 ;
+//            }
+//
+//        }
+//        //  полиндром
+//        Boolean status = true;
+//        System.out.println("полиндром? " + status);
+        //return word;
+    }
+
+
+
+
+
+}
+
+********************************
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+	//  заменяющий в тексте все вхождения слова «бяка» на «[вырезано цензурой]
+
+        Cenzor.checkCenzor("аргентина манит негра бяка");
+        Cenzor.checkCenzor("сам ты бяка");
+        Cenzor.checkCenzor("сам ты нехороший человек");
+
+    }
+}

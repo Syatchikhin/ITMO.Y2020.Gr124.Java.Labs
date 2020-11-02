@@ -1,0 +1,242 @@
+package com.company;
+import java.util.TreeSet;
+
+public class Main {
+
+    public static void main(String[] args) {
+	//  7.2 Shape должен наследоваться от Comparable. То есть, shapes должно быть
+        //сравнимы по объему.
+        //Можно воспользоваться методом Arrays.sort(), чтобы убедится, что массив фигур
+        //сортируется верно.
+        TreeSet<Shape> shapes = new TreeSet<>();
+
+        Shape pyramid = new Pyramid( 9.0,15);     //vol 45
+        Shape cylinder = new Cylinder( 4, 5);    //vol 251
+        Shape  ball = new Ball( 3);                 //vol 113
+        Shape box = new Box(400);                   //vol 400
+
+        shapes.add(pyramid);
+        shapes.add(cylinder);
+        shapes.add(ball);
+        shapes.add(box);
+
+        System.out.println("Pyramid's's volume is: " + pyramid.getVolume());
+        System.out.println("Cylinder's volume is: " + cylinder.getVolume());
+        System.out.println("Ball's volume is: " + ball.getVolume());
+        System.out.println("Box's volume is: " + box.getVolume());
+
+        for (Shape shape: shapes){
+            System.out.println("Shape's volume is: " + shape.getVolume());
+        }
+ }
+}
+//******************************************************************************************
+package com.company;
+
+    public class Shape implements Comparable<Shape> {
+        public double volume;
+        
+            public Shape (double vol)
+            {
+                this.volume = vol;
+            }
+            public double getVolume(){
+                return volume;
+            }
+
+       @Override
+        public int compareTo( Shape shapes){
+                if (this.volume == shapes.volume){
+                    return 0;
+                }
+                else {
+                    if (this.volume < shapes.volume) {
+                        return -1;
+                    } else {
+                        return 1;
+                    }
+                }
+       }
+    }
+//**************************************************************
+	Package com.company;
+
+public class SolidOfRevolution extends Shape {
+   protected double radius;
+   protected double volume;
+
+public SolidOfRevolution  (double rad){
+        //super(rad);
+        this.radius = rad;
+        this.volume = volume;
+   }
+
+//    public SolidOfRevolution (){
+//        //super(rad);
+//
+//    }
+
+
+
+//    @Override
+//public  double getRedius(){
+//
+//        this.radius = radius;
+//        return radius;
+//  }
+
+}
+//******************************************************************
+package com.company;
+
+public class Ball extends SolidOfRevolution{
+    Ball(int rad) {
+        super(rad);
+
+
+    }
+    //this.radius = rad;
+
+    @Override
+ public double getVolume(){
+        return  (4 * 3.14 * Math.pow(radius,3))/3;
+    }
+
+
+}
+
+//class Ball extends SolidOfRevolution { // конкретный класс
+//
+//    @Override
+//    public double getVolume() {
+//        return Math.PI * Math.pow(radius, 3) * 4 / 3;
+//    }
+//
+//    public Ball(double radius) {
+//        super(radius);
+//    }
+//}
+//*************************************************************************
+package com.company;
+
+public class Pyramid extends Shape {
+    //double volume;
+    double radius;
+    double area;
+    int height;
+
+ public Pyramid(double s, int h){
+        super(vol);
+        this.volume = vol;
+        this.area = s;
+        this.height = h;
+    }
+
+    public   Pyramid(double vol){
+        super(vol);
+        //super(volume);
+        //this.area = s;
+        //this.height = h;
+    }
+
+
+
+    @Override
+public double getVolume(){
+        return (area * height ) /3;
+    }
+
+}
+//***************************************************************************
+package com.company;
+
+public class Cylinder extends SolidOfRevolution{
+    double height;
+
+    Cylinder(int rad , int h ) {
+        super(rad);
+        this.height = h;
+        this.volume = 3.14 * Math.pow(radius,2) * height;
+    }
+
+     @Override
+ public double getVolume(){
+        return 3.14 * Math.pow(radius,2) * height;
+    }
+
+
+}
+
+//class Cylinder extends SolidOfRevolution { // конкретный класс
+//
+//    private double height;
+//
+//    public Cylinder(double radius, double height) {
+//        super(radius);
+//        this.height = height;
+//    }
+//
+//    @Override
+//    public double getVolume() {
+//        return Math.PI * radius * radius * height;
+//    }
+//}
+//****************************************************************************
+package com.company;
+
+public class Box extends SolidOfRevolution {
+
+    public double available;
+
+    Box(double vol) {
+        super(vol);
+        this.available = vol;
+        this.volume = vol;
+    }
+
+    public boolean add(Shape shape) {
+        if (available >= shape.getVolume()) {
+
+            available -= shape.getVolume();
+            System.out.println("volume is: " + available);
+            return true;
+
+        } else {
+            System.out.println("volume is: " + available);
+            return false;
+        }
+    }
+
+    @Override
+    public double getVolume() {
+        return volume;
+    }
+
+}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

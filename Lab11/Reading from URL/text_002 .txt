@@ -1,0 +1,68 @@
+package com.company;
+import java.net.*;
+import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.net.URLEncoder;
+import java.util.Scanner;
+
+
+//public class Main {
+
+    //public static void main(String[] args) {
+	// write your code here
+        //Scanner in = new Scanner(System.in);
+        //System.out.print("Enter request");
+        //String query = in.nextLine();
+        //in.close();
+        //query = URLEncoder.encode(query, "UTF-8");
+       // String query = "Perm";
+
+        //Сcылка
+       // String targetUrl = "https://en.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=\"" + query + "\"";
+
+
+
+    //}
+//}
+//public class URLConnectionReader {
+public class Main {
+    public static void main(String[] args) throws Exception {
+
+        String query = "Perm";
+
+        //Сcылка
+        String targetUrl = "https://en.wikipedia.org/w/api.php?action=query&list=search&utf8=&format=json&srsearch=\"" + query + "\"";
+
+        String line ="";
+        String sumLine = "" ;
+
+        URL oracle = new URL(targetUrl);
+        URLConnection yc = oracle.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(
+                yc.getInputStream()));
+        String inputLine;
+        //while ((inputLine = in.readLine()) != null)
+            //System.out.println("protocol = " + oracle.getProtocol());
+            //System.out.println("protocol = " + oracle.getPort());
+            //inputLine = inputLine.toString();
+
+           // System.out.println(inputLine);
+               // sumLine += inputLine;
+        while ((line = in.readLine()) != null ){
+
+            sumLine += line;
+        }
+
+        in.close();
+
+
+        //System.out.println(sumLine);
+
+        //JSONObject json = new JSONObject();
+        //json.toString();
+
+    }
+}

@@ -1,0 +1,28 @@
+package com.company;
+
+import java.io.*;
+import java.util.ArrayList;
+
+public class Main {
+public static void main(String[] args){
+		try (BufferedReader br = new BufreredReader(new Filereader ( fileName))){
+			String line;
+			ArrayList<> text = new ArrayList<String>();
+			while ((line = br.readLene()) !=null) {
+				text.add(line);
+				}
+			
+				for (String s: text){
+					System.out.println(s);
+				}
+				
+		} catch (FileNotFoundException e){
+		 System.out.println("File not found");
+		 }	catch(IOException e){
+		 e.printStackTrace();
+				
+		}
+
+
+ }
+}

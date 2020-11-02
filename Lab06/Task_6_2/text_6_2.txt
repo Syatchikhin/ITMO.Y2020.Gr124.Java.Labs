@@ -1,0 +1,44 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+	// Перепишите метод, проверяющий слово на палиндромность с помощью
+    //Stringbuilder. В таком методе должно быть 1-3 строки.
+
+        Palindrom.checkPolyndrom("спел лепсик");
+        Palindrom.checkPolyndrom("казак");
+        Palindrom.checkPolyndrom("а роза упала на лапу азора");
+
+        System.out.println(Polyndrome.checkPolindrome("казак"));
+        System.out.println(Polyndrome.checkPolindrome("собака"));
+        System.out.println(Polyndrome.checkPolindrome("а роза упала на лапу азора"));
+
+    }
+}
+********************************************
+package com.company;
+
+public class Palindrom {
+
+    static void checkPolyndrom( String word) {
+        String replaced = word.toLowerCase().replaceAll(" ", "");
+        String reversed = new StringBuilder(replaced).reverse().toString();
+        System.out.println ( reversed.equals(replaced) ? "Полиндром" : "Не полиндром"); //Тернарный оператор
+
+    }
+}
+
+*************************************************
+
+package com.company;
+
+public class Polyndrome {
+
+    public static boolean checkPolindrome(String words) {
+        String textWithOutGaps = words.toLowerCase().replaceAll(" ", "");
+        String reversedText = new StringBuffer(textWithOutGaps).reverse().toString();
+        return reversedText.equals(textWithOutGaps);
+    }
+}

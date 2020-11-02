@@ -1,0 +1,96 @@
+package com.company;
+
+import java.io.*;
+
+public class Main {
+
+    public static void main(String[] args) throws IOException {
+	// 9.2 Написать метод, который записывает в файл строку, переданную параметром.
+        String filePath = "E:\\max\\Programming\\09_Java_Romanova\\ITMO.Y2020.Gr124.Java.Labs\\Lab09\\Task_9_2\\src\\com\\company\\";
+        String fileName_1 = "text1.txt";
+        String fileName_2 = "text2.txt";
+        String fileName_3 = "text3.txt";
+        String content = "Однажды в студеную зимнюю пору я из лесу вышел";
+
+         MyFileWriter_1( filePath, fileName_1, content);
+        MyFileWriter_2( filePath, fileName_2, content);
+        //MyFileWriter_3( filePath, fileName_3, content);
+
+    }
+
+   public static void  MyFileWriter_1( String p, String n, String c) throws IOException {
+    String filePath = p;
+    String fileName = n;
+    String  content = c;
+
+       FileWriter br = new FileWriter(new File(filePath+fileName));
+       //for(String content : strings){
+           br.write(content);
+       //}
+   }
+
+    public static void  MyFileWriter_2( String p, String n, String c)
+    {
+        String filePath = p;
+        String fileName = n;
+        String  content = c;
+        //OutputStream = c;
+       OutputStream outputStream;
+        int bytes = 128;
+       try {
+           outputStream = new FileOutputStream(filePath + fileName );
+           outputStream.write(bytes);
+           outputStream.close();
+       } catch (IOException e) {
+           e.printStackTrace();
+
+//       } finally {
+//           try {
+//               if(outputStream != null)
+//                   outputStream.close();
+//           } catch (IOException e1) {
+//               e1.printStackTrace();
+//           }
+//       }
+
+    }
+
+
+    public static void  MyFileWriter_3( String p, String n, String c)
+    {
+
+
+        FileOutputStream fileOutputStream = null;
+        try {
+            fileOutputStream = new FileOutputStream(p+n );
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        String greetings = c;
+
+        try {
+            fileOutputStream.write(greetings.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            fileOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+//        FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\Username\\Desktop\\test.txt");
+//
+//        String greetings = "Привет! Добро пожаловать на JavaRush - лучший сайт для тех, кто хочет стать программистом!";
+//
+//        fileOutputStream.write(greetings.getBytes());
+//
+//        fileOutputStream.close();
+
+
+    }
+
+
+}
